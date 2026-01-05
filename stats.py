@@ -3,13 +3,16 @@ def count_words(text: str) -> int:
 
 def n_char(text: str) -> int:
     result = {}
-    characters = []
+    text = text.lower()
+
     for char in text:
-        characters.append(char.lower())
+        if char in result:
+            result[char] += 1
+        else:
+            result[char] = 1
 
-    unique_char = tuple(characters)
-        
-    print(characters)
-    print(unique_char)
+    return result 
 
-n_char("Hello this is python again")
+
+
+#convert to lowercase , and count the unique characters (also the whitespace) -> add it to a dictonairy with {'p' : 6121} as key:value pair
